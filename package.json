@@ -1,14 +1,15 @@
 {
-"name": "VKSC390",
-"version": "1.0.0",
-"description": "",
-"main": "bot.js",
-"scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
-"author": "",
-"license": "ISC",
-"dependencies": {
-  "VK-Promise": "0.2.91"
-}
+  "name": "VKSC390",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "VK-Promise": "0.2.91",
+    "weather-js": "^2.0.0"
+  }
 }
