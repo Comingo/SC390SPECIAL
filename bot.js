@@ -17,13 +17,13 @@ vk.on("message", function(event, msg) {
 
 vk.on("message", function(event, msg) {
   if(msg.body == '.погода'){
-    weather.find({search: 'Питер', degreeType: 'C'}, function(err, result) {
+    weather.find({search: args.join[0], degreeType: 'C'}, function(err, result) {
   if (result === undefined || result.length === 0) {
         msg.send("Произошла неожиданная ошибка. Просьба написать сюда: https://vk.com/douddle")
   }
   var current = result[0].current;
       var location = result[0].location;
-      msg.send(`Погода в Санкт-Петербурге (взято за основу):\nТип температуры: ${location.degreetype}\nТемпература: ${current.temperature} градусов.\nОщущается как: ${current.feelslike} градусов.\nВлажность: ${current.humidity}%`)
+      msg.send(`Погода в пизде (взято за основу):\nТип температуры: ${location.degreetype}\nТемпература: ${current.temperature} градусов.\nОщущается как: ${current.feelslike} градусов.\nВлажность: ${current.humidity}%`)
       if(err) console.log(err);
      })
     }
