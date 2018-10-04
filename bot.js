@@ -1,4 +1,6 @@
 const botconfig = require('./botconfig.js')
+var date = new Date()
+var current_hour = date.getHours()
 const weather = require("weather-js")
 var VK = require("VK-Promise");
     vk = new VK(botconfig.token)
@@ -7,8 +9,9 @@ vk.init_longpoll();
 
 vk.on("message", function(event, msg) {
   if(msg.body == '.дз'){
-    msg.send("Д/З что вбиты в базу:")
-    msg.send("Д/З на Четверг (04.09):\n\nЛитература: проект 'о труде'\n\nРусск. яз: номер 71\n\nАлгебра: 108(1), 102(2)\n\nИстория: парагрф 5 подготовка к словарному диктанту")
+    msg.send(`Д/З что вбиты в базу: (последняя проверка: ${current_hour}`)
+    msg.send("Д/З на Пятницу (05.10):\n\nАнгл.яз: слова, все про PAST SIMPLE, стр 18.\n\nГеометрия: номер 66(в), 68\n\nГеография: параграф 6\n\nФизика: параграфы 1-13 повторить.")
+    msg.send("Тренажер по алгебре: https://pp.userapi.com/c848536/v848536529/88692/tWmjMsevO6Y.jpg")
     msg.send("Если информация не совсем верна, и вы хотите ее подкорректировать, пишите сюда: https://vk.com/douddle")
   }
 });
@@ -21,7 +24,7 @@ vk.on("message", function(event, msg) {
   }
   var current = result[0].current;
       var location = result[0].location;
-      msg.send(`Погода в Санкт-Петербурге (взято за основу):\nТип температуры: ${location.degreetype}\nТемпература: ${current.temperature} градусов.\nОщущается как: ${current.feelslike} градусов.\nВлажность: ${current.humidity}%`)
+      msg.send(`Погода в Санкт-Петербурге (последняя проверка в: ${current_hour}):\n\nТип температуры: ${location.degreetype}\nТемпература: ${current.temperature} градусов.\nОщущается как: ${current.feelslike} градусов.\nВлажность: ${current.humidity}%`)
       if(err) console.log(err);
      })
     }
