@@ -11,5 +11,6 @@
   "dependencies": {
     "VK-Promise": "0.2.91",
     "weather-js": "^2.0.0"
+    "date-and-time": "0.6.2"
   }
 }
