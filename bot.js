@@ -13,7 +13,7 @@ vk.init_longpoll();
 
 vk.on("message", function(event, msg) {
   if(msg.body == '.дз'){
-    msg.send(`Д/З что вбиты в базу: (последняя проверка: ${now}`)
+    msg.send(`Д/З что вбиты в базу: (последняя проверка: ${now.Date}`)
     msg.send("Д/З на Пятницу (05.10):\n\nАнгл.яз: слова, все про PAST SIMPLE, стр 18.\n\nГеометрия: номер 66(в), 68\n\nГеография: параграф 6\n\nФизика: параграфы 1-13 повторить.")
     msg.send("Тренажер по алгебре: https://pp.userapi.com/c845322/v845322822/105e96/TZetkZZdDHw.jpg")
     msg.send("Если информация не совсем верна, и вы хотите ее подкорректировать, пишите сюда: https://vk.com/douddle")
@@ -28,7 +28,7 @@ vk.on("message", function(event, msg) {
   }
   var current = result[0].current;
       var location = result[0].location;
-      msg.send(`Погода в Санкт-Петербурге (последняя проверка в: ${now}):\n\nТип температуры: ${location.degreetype}\nТемпература: ${current.temperature} градусов.\nОщущается как: ${current.feelslike} градусов.\nВлажность: ${current.humidity}%`)
+      msg.send(`Погода в Санкт-Петербурге (последняя проверка в: ${now.Date}):\n\nТип температуры: ${location.degreetype}\nТемпература: ${current.temperature} градусов.\nОщущается как: ${current.feelslike} градусов.\nВлажность: ${current.humidity}%`)
       if(err) console.log(err);
      })
     }
