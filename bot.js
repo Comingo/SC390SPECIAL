@@ -33,16 +33,6 @@ vk.on("message", function(event, msg) {
     }
 });
     
-    //Меня заставили    
-
-vk.on("message", function(event,msg) {
-    if(msg.body == '.сосать'){
-        msg.send("Я люблю чупа-чупсы! А ты? ;-)")
-    }
-})
-
-    //Больше не заставляли..
-
 vk.on("message", function(event,msg) {
   if(msg.body == '.рандом'){
     msg.send(`Выпало: ${Math.floor(Math.random() * 2) == 0 ? "ОРЕЛ! }:)" : "РЕШКА! }:)"}`)
