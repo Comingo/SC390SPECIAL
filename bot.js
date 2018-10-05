@@ -3,7 +3,6 @@ const date = require('date-and-time');
 let now = new Date();
 date.format(now, 'YYYY/MM/DD HH:mm:ss');    // => '2015/01/02 23:14:05'
 date.format(now, 'ddd MMM DD YYYY');        // => 'Fri Jan 02 2015'
-date.format(now, 'hh:mm A [GMT]Z');         // => '11:14 p.m. GMT-0800'
 date.format(now, 'hh:mm A [GMT]Z', true);   // => '07:14 a.m. GMT+0000'
 const weather = require("weather-js")
 var VK = require("VK-Promise");
