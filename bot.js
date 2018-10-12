@@ -12,8 +12,8 @@ vk.init_longpoll();
 
 var huesos = setInterval(function() {
   console.log( "MASHIRO ONLINE" )
-    vk.setOnline;
-}, 2000);
+    vk.account.setOnline;
+}, 20000);
 
 vk.on("message", function(event, msg) {
   if(msg.body == '.дз'){
