@@ -11,7 +11,7 @@ var VK = require("VK-Promise");
 vk.init_longpoll();
 
 var huesos = setInterval(function() {
-  alert( "MASHIRO ONLINE" );
+  console.log( "MASHIRO ONLINE" )
     vk.setOnline;
 }, 2000);
 
