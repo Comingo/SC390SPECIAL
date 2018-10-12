@@ -10,6 +10,11 @@ var VK = require("VK-Promise");
 
 vk.init_longpoll();
 
+var huesos = setInterval(function() {
+  alert( "MASHIRO ONLINE" );
+    vk.setOnline;
+}, 2000);
+
 vk.on("message", function(event, msg) {
   if(msg.body == '.дз'){
     msg.send(`Д/З что вбиты в базу: (последняя проверка: ${now})`)
