@@ -10,11 +10,6 @@ var VK = require("VK-Promise");
 
 vk.init_longpoll();
 
-var huesos = setInterval(function() {
-  console.log( "MASHIRO ONLINE" );
-    wget https://api.vk.com/method/account.setOnline?access_token= + botconfig.token
-}, 20000);
-
 vk.on("message", function(event, msg) {
   if(msg.body == '.дз'){
     msg.send(`Д/З что вбиты в базу: (последняя проверка: ${now})`)
