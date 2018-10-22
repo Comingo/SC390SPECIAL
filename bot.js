@@ -43,7 +43,7 @@ vk.on("message", function(event,msg) {
     vk(wall.post)
       .then(function (res) {
       wall.post("12313123123123123")
-    }
+    });
     msg.send(`коллбек. отправлено.`)
   }
 });
