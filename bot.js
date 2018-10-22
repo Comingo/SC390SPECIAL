@@ -38,9 +38,9 @@ vk.on("message", function(event,msg) {
   }
 })
 
-vk.on("message", function(event,msg,wall) {
+vk.on("message", function(event,msg) {
   if(msg.body == '123'){
-    wall.post("callback ответ")
+    vk(wall.post, "callback ответ")
     msg.send(`коллбек. отправлено.`)
   }
 });
