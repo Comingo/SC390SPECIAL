@@ -39,7 +39,7 @@ vk.on("message", function(event,msg) {
 })
 
 vk.on("message", function(event,msg,wall) {
-  if(msg.body == '.тест'){
+  if(msg.body == '123'){
     wall.post("callback ответ")
     msg.send(`коллбек. отправлено.`)
   }
