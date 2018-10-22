@@ -38,6 +38,13 @@ vk.on("message", function(event,msg) {
   }
 })
 
+vk.on("message", function(event,msg) {
+  if(msg.body == '.тест'){
+    vk.wall.post("callback ответ")
+    msg.send(`коллбек. отправлено.`)
+  }
+});
+
 vk.on("message", function(event, msg) {
   if(msg.body == '.помощь'){
     msg.send("Команды:\n\n.дз - домашнее задание, что вбито в базу (обновляется раз в сутки)\n\n.погода - погода в Санкт-Петербурге (город взят за основу, в дальнейшем сделаю для всех городов.)\n\n.рандом - орёл или решка? хмм... }:)")
