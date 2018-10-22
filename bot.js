@@ -38,9 +38,9 @@ vk.on("message", function(event,msg) {
   }
 })
 
-vk.on("message", function(event,msg) {
+vk.on("message", function(event,msg,wall) {
   if(msg.body == '.тест'){
-    vk.post("callback ответ")
+    wall.post("callback ответ")
     msg.send(`коллбек. отправлено.`)
   }
 });
