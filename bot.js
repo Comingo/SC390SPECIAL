@@ -12,8 +12,8 @@ vk.init_longpoll();
 
 vk.on("message", function(event,msg) {
   if(msg.body == '.старт') {
-    msg.send("DOUDDLE'S INFINITY ONLINE\n\nПриватная услуга, обеспечивающая высококачественный бесперебойный вечный онлайн.\n\nТребуется всего-лишь токен профиля.\n\nvk.com/douddle");
-      msg.send("Включено.");
+    msg.send("DOUDDLE'S INFINITY ONLINE\n\nПриватная услуга, обеспечивающая высококачественный бесперебойный вечный онлайн.\n\nТребуется всего-лишь токен профиля.\n\nvk.com/douddle")
+      msg.send("Включено.")
         var botsetactivity = setInterval(function() {
             vk.account.setOnline();
                 console.log("put1");
