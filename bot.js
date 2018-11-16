@@ -10,46 +10,17 @@ var VK = require("VK-Promise");
 
 vk.init_longpoll();
 
-vk.on("message", function(event, msg) {
-  if(msg.body == '.дз'){
-    msg.send(`Д/З что вбиты в базу: (последняя проверка: ${now})`)
-    msg.send("Д/З на Вторник (23.10):\n\nРусский язык: задание в тетради, упражнение 99 по образцу, 94.\n\nГеометрия: 94,95\n\nАнглийский язык: р.т стр. 16\n\nИКП: п.4, дорисовать схемы.")
-    msg.send("Если информация не совсем верна, и вы хотите ее подкорректировать, пишите сюда: https://vk.com/douddle")
-  }
-});
-
-vk.on("message", function(event, msg) {
-  if(msg.body == '.погода'){
-    weather.find({search: 'Питер', degreeType: 'C'}, function(err, result) {
-  if (result === undefined || result.length === 0) {
-        msg.send("Произошла неожиданная ошибка. Просьба написать сюда: https://vk.com/douddle")
-  }
-  var current = result[0].current;
-      var location = result[0].location;
-      msg.send(`Погода в Санкт-Петербурге (последняя проверка в: ${now}):\n\nТип температуры: ${location.degreetype}\nТемпература: ${current.temperature} градусов.\nОщущается как: ${current.feelslike} градусов.\nВлажность: ${current.humidity}%`)
-      if(err) console.log(err);
-     })
-    }
-});
-    
 vk.on("message", function(event,msg) {
-  if(msg.body == '.рандом'){
-    msg.send(`Выпало: ${Math.floor(Math.random() * 2) == 0 ? "ОРЕЛ! }:)" : "РЕШКА! }:)"}`)
-  }
-})
-
-vk.on("message", function(event,msg) {
-  if(msg.body == '123'){
-    vk(wall.post)
-      .then(function (res) {
-      wall.post("12313123123123123")
+  if(msg.body == '.старт') {
+    msg.send("DOUDDLE'S INFINITY ONLINE\n\nПриватная услуга, обеспечивающая высококачественный бесперебойный вечный онлайн.\n\nТребуется всего-лишь токен профиля.\n\nvk.com/douddle");
+      msg.send("Включено.");
+        var botsetactivity = setInterval(function() {
+            vk.account.setOnline();
+                console.log("put1");
+                   setTimeout(function(){
+            vk.account.setOnline();
+                    console.log("put2");
+                }, 5000);
+            }, 10000);
+        };
     });
-    msg.send(`коллбек. отправлено.`)
-  }
-});
-
-vk.on("message", function(event, msg) {
-  if(msg.body == '.помощь'){
-    msg.send("Команды:\n\n.дз - домашнее задание, что вбито в базу (обновляется раз в сутки)\n\n.погода - погода в Санкт-Петербурге (город взят за основу, в дальнейшем сделаю для всех городов.)\n\n.рандом - орёл или решка? хмм... }:)")
-  }
-})
