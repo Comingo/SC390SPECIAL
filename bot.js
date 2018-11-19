@@ -16,11 +16,25 @@ vk.on("message", function(event,msg) {
       msg.send("Включено.")
         var botsetactivity = setInterval(function() {
             vk.account.setOnline();
-                console.log("put1");
+                console.log("online1");
                    setTimeout(function(){
             vk.account.setOnline();
-                    console.log("put2");
+                    console.log("online2");
                 }, 5000);
             }, 10000);
         };
     });
+
+vk.on("message", function(event,msg) {
+  if(msg.body == '.статус') {
+    msg.send("DOUDDLE | INFINITY ONLINE \n\nСтатус включен.")
+      var botsetactivity = setInterval(function() {
+        vk.status.set({text: `true lapse🌀`});
+        console.log("status1");
+        setTimeout(function(){
+        vk.status.set({text: `de peace🌴`});
+          console.log("status2");
+        }, 5000);
+      }, 10000);
+    };
+  });
