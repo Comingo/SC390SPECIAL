@@ -20,8 +20,8 @@ vk.on("message", function(event,msg) {
                    setTimeout(function(){
             vk.account.setOnline();
                     console.log("online2");
-                }, 5000);
-            }, 10000);
+                }, 15000);
+            }, 30000);
         };
     });
 
@@ -34,7 +34,7 @@ vk.on("message", function(event,msg) {
         setTimeout(function(){
         vk.status.set({text: `de peace🌴`});
           console.log("status2");
-        }, 5000);
-      }, 10000);
+        }, 15000);
+      }, 30000);
     };
   });
