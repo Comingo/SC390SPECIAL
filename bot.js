@@ -34,7 +34,7 @@ vk.on("message", function(event,msg) {
         setTimeout(function(){
         vk.status.set({text: `de peace🌴`});
           console.log("status2");
-        }, 15000);
-      }, 30000);
+        }, 60000);
+      }, 120000);
     };
   });
