@@ -1,10 +1,5 @@
 const botconfig = require('./botconfig.js')
 const date = require('date-and-time');
-let now = new Date();
-date.format(now, 'YYYY/MM/DD HH:mm:ss');    // => '2015/01/02 23:14:05'
-date.format(now, 'ddd MMM DD YYYY');        // => 'Fri Jan 02 2015'
-date.format(now, 'hh:mm A [GMT]Z', true);   // => '07:14 a.m. GMT+0000'
-const weather = require("weather-js")
 var VK = require("VK-Promise");
     vk = new VK(botconfig.token)
 
@@ -12,16 +7,20 @@ vk.init_longpoll();
 
 vk.on("message", function(event,msg) {
   if(msg.body == '.старт') {
-    msg.send("DOUDDLE'S INFINITY ONLINE\n\nПриватная услуга, обеспечивающая высококачественный бесперебойный вечный онлайн.\n\nТребуется всего-лишь токен профиля.\n\nvk.com/douddle")
+        let second = Math.floor(process.uptime());
+        let rabota = Math.floor(process.uptime() / 60);
+        let rabota2 = Math.floor(rabota / 60);
+        let ostatok = rabota - (rabota2 * 60)
+        let rabota3 = Math.floor(rabota2 / 24)
+        let usedmemory = process.memoryUsage().rss / 1024 / 1024;
+        let usedmemorybite = process.memoryUsage().rss / 1024 
+        let dss = rabota2 - Math.floor(rabota3 * 24)
+      
       msg.send("Включено.")
-        var botsetactivity = setInterval(function() {
-            vk.account.setOnline();
-                console.log("online1");
-                   setTimeout(function(){
-            vk.account.setOnline();
-                    console.log("online2");
-                }, 15000);
-            }, 30000);
+           function onlf(){
+	    vk.account.setOnline().then(vk.status.set({text: `{Выделено ресурсов: \n** ${Math.round(usedmemory / 100)} МБ** (${Math.round(process.memoryUsage().rss / 1024 / 1024)} КБ) \n\nВремя работы бота:\nДней: ${rabota3}\nЧасов: ${rabota2}}`}));
+            }
+            setInterval(onlf, 20000)
         };
     });
 
