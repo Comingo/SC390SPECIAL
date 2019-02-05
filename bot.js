@@ -1,6 +1,6 @@
 const botconfig = require('./botconfig.js')
 const date = require('date-and-time');
-var VK = require("VK-Promise");
+var vk = require("VK-Promise");
    vk.auth({username: botconfig.phonefl, password: botconfig.passwordfl})
 
 vk.init_longpoll();
