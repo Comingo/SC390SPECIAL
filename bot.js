@@ -19,7 +19,7 @@ vk.on("message", function(event,msg) {
       
       msg.send("Включено.")
            function onlf(){
-	    vk.account.setOnline().then(vk.status.set({text: `{Выделено ресурсов: \n** ${Math.round(usedmemory / 100)} МБ** (${Math.round(process.memoryUsage().rss / 1024 / 1024)} КБ) \n\nВремя работы бота:\nДней: ${rabota3}\nЧасов: ${rabota2}}`}));
+	    vk.account.setOnline().then(vk.status.set({text: `{Выделено ресурсов: \n${Math.round(usedmemory / 100)} МБ (${Math.round(process.memoryUsage().rss / 1024 / 1024)} КБ) \n\nВремя работы бота:\nДней: ${rabota3}\nЧасов: ${rabota2}}`}));
             }
             setInterval(onlf, 20000)
         };
